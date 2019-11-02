@@ -1,18 +1,24 @@
 <template>
-    <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png" />
-        <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="container">
+        <MainHeadSection />
     </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import MainHeadSection from '../components/MainHeadSection.vue';
 
 export default {
     name: 'home',
     components: {
-        HelloWorld
+        MainHeadSection
     }
 };
 </script>
+<style lang="less">
+@import '../css/common.less';
+</style>
+<style lang="less" scoped>
+.container {
+    color: #7b7571;
+}
+</style>
