@@ -1,16 +1,19 @@
 <template>
     <div class="container">
         <MainHeadSection />
+        <FixedRouteHeader />
     </div>
 </template>
 
 <script>
 import MainHeadSection from '../components/MainHeadSection.vue';
+import FixedRouteHeader from '../components/FixedRouteHeader.vue';
 
 export default {
     name: 'home',
     components: {
-        MainHeadSection
+        MainHeadSection,
+        FixedRouteHeader
     }
 };
 </script>
