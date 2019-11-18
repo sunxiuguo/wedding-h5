@@ -46,7 +46,6 @@ export default class MainHeadSection extends Vue {}
 <style scoped lang="less">
 #home {
     text-align: center;
-    height: 800px;
     position: relative;
 
     .absolute-content {
