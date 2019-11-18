@@ -1,35 +1,43 @@
 <template>
-    <header>
-        <div class="sticky-wrapper" id="nav-sticky-wrapper">
-            <nav id="nav">
-                <div class="container">
-                    <a href="#" class="navbar-brand">
-                        <CoupleNames size="small" />
-                    </a>
-                    <div class="navbar-collapse">
-                        <ul id="nav-list">
-                            <li
-                                v-for="item in routeNameList"
-                                :key="item.name"
-                                :class="{ active: activeRoute === item.name }"
-                            >
-                                <a :href="item.anchor">{{ item.name }}</a>
-                            </li>
-                        </ul>
-                    </div>
+    <div v-sticky="{ zIndex: 1000, stickyTop: 0, disabled: false }">
+        <div>
+            <header id="fixed-header">
+                <div class="sticky-wrapper" id="nav-sticky-wrapper">
+                    <nav id="nav">
+                        <div class="container">
+                            <a href="#" class="navbar-brand">
+                                <CoupleNames size="small" />
+                            </a>
+                            <div class="navbar-collapse">
+                                <ul id="nav-list">
+                                    <li
+                                        v-for="item in routeNameList"
+                                        :key="item.name"
+                                        :class="{ active: activeRoute === item.name }"
+                                    >
+                                        <a :href="item.anchor">{{ item.name }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
-            </nav>
+            </header>
         </div>
-    </header>
+    </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import VueSticky from 'vue-sticky';
 import CoupleNames from './CoupleNames.vue';
 
 @Component({
     components: {
         CoupleNames
+    },
+    directives: {
+        sticky: VueSticky
     }
 })
 export default class FixedRouteHeader extends Vue {
