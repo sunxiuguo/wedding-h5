@@ -2,6 +2,7 @@
     <div class="container">
         <MainHeadSection />
         <FixedRouteHeader />
+        <div class="test-height"></div>
     </div>
 </template>
 
@@ -21,6 +22,10 @@ export default {
 @import '../css/common.less';
 </style>
 <style lang="less" scoped>
+.test-height {
+    height: 3000px;
+    width: 100vw;
+}
 .container {
     color: #7b7571;
 }
