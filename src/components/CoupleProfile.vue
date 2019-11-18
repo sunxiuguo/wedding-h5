@@ -53,7 +53,7 @@ export default class CoupleProfile extends Vue {
     padding: 120px 0;
 
     .container {
-        width: 100%;
+        // width: 100%;
         padding: 0 50px;
         display: flex;
         justify-content: space-around;

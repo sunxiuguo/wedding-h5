@@ -91,27 +91,27 @@ export default class FixedRouteHeader extends Vue {
         .container {
             margin-right: auto;
             margin-left: auto;
-            width: 1000px;
+            width: 100%;
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             .navbar-brand {
-                float: left;
                 padding: 15px 15px;
                 font-size: 18px;
                 line-height: 20px;
                 color: #777;
-                margin-left: -60px;
+                margin-left: 10%;
             }
 
             .navbar-collapse {
                 padding-right: 15px;
                 padding-left: 15px;
+                margin-right: 10%;
                 overflow-x: visible;
                 -webkit-overflow-scrolling: touch;
-                display: block !important;
+                display: flex;
                 height: auto !important;
                 padding-bottom: 0;
                 width: auto;
@@ -126,8 +126,6 @@ export default class FixedRouteHeader extends Vue {
 
                 #nav-list {
                     padding: 0px 30px;
-                    float: right !important;
-                    margin-right: -150px;
                     list-style: none;
 
                     li {
