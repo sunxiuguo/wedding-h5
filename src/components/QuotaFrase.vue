@@ -8,13 +8,8 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import Parallax from 'vue-parallaxy';
 
-@Component({
-    components: {
-        Parallax
-    }
-})
+@Component
 export default class QuotaFrase extends Vue {}
 </script>
 <style scoped lang="less">
