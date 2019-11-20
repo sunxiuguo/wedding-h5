@@ -1,14 +1,8 @@
 <template>
     <section id="frase">
-        <Parallax>
-            <img src="http://marttinfisher.com/themes/bodas/img/bg-2.jpg" alt="cool background" />
-        </Parallax>
-        <section class="absolute-content">
-            <h2>
-                <!-- 我们会用尽一生一世去了解彼此，去爱护彼此，去陪伴彼此。 -->
-                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            </h2>
-        </section>
+        <div class="container">
+            <h2>我们彼此会永远相互守候，相互支持，相互拥抱。</h2>
+        </div>
     </section>
 </template>
 
@@ -28,19 +22,25 @@ export default class QuotaFrase extends Vue {}
     text-align: center;
     position: relative;
 
-    .absolute-content {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
+    background: url('http://marttinfisher.com/themes/bodas/img/bg-2.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #ffffff;
+
+    padding: 120px 0;
+
+    display: flex;
+    justify-content: center;
+
+    .container {
         height: 100%;
+        width: 66.7%;
+
         display: flex;
         justify-content: center;
         align-items: center;
 
         h2 {
-            // width: 70%;
             font-size: 30px;
             font-weight: 500;
         }
