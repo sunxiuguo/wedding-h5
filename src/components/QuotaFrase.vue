@@ -17,7 +17,7 @@ export default class QuotaFrase extends Vue {}
     text-align: center;
     position: relative;
 
-    background: url('http://marttinfisher.com/themes/bodas/img/bg-2.jpg') no-repeat;
+    background: url('https://cdn.zhusun.club/image/wedding/bg2.pngbg-2.jpeg') no-repeat;
     background-attachment: fixed;
     background-size: cover;
     color: #ffffff;

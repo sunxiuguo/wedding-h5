@@ -1,7 +1,7 @@
 <template>
     <section id="home">
         <Parallax>
-            <img src="http://marttinfisher.com/themes/bodas/img/bg-1.jpg" alt="cool background" />
+            <img src="https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg" alt="cool background" />
         </Parallax>
         <section class="absolute-content">
             <h3 class="title">
