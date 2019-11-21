@@ -4,6 +4,7 @@
         <FixedRouteHeader />
         <CoupleProfile />
         <QuotaFrase />
+        <Story />
         <div class="test-height"></div>
     </div>
 </template>
@@ -13,6 +14,7 @@ import MainHeadSection from '../components/MainHeadSection.vue';
 import FixedRouteHeader from '../components/FixedRouteHeader.vue';
 import CoupleProfile from '../components/CoupleProfile.vue';
 import QuotaFrase from '../components/QuotaFrase.vue';
+import Story from '../components/Story.vue';
 
 export default {
     name: 'home',
@@ -20,7 +22,8 @@ export default {
         MainHeadSection,
         FixedRouteHeader,
         CoupleProfile,
-        QuotaFrase
+        QuotaFrase,
+        Story
     }
 };
 </script>

@@ -33,14 +33,14 @@ export default class CoupleProfile extends Vue {
         {
             lastName: '孙',
             firstName: '修国',
-            imageSrc: 'http://marttinfisher.com/themes/bodas/img/bg-1.jpg',
+            imageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
             desc:
                 '我在写bug！我是傻逼！我们会一直走下去！我在写bug！我是傻逼！我们会一直走下去！我在写bug！我是傻逼！我们会一直走下去！我在写bug！我是傻逼！我们会一直走下去！我在写bug！我是傻逼！我们会一直走下去！'
         },
         {
             lastName: '祝',
             firstName: '佳儿',
-            imageSrc: 'http://marttinfisher.com/themes/bodas/img/bg-1.jpg',
+            imageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
             desc:
                 '哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！'
         }
