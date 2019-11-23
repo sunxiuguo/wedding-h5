@@ -9,7 +9,7 @@
                 We are getting married!
                 <span></span>
             </h3>
-            <CoupleNames />
+            <CoupleNames :showAnimate="true" />
             <div class="date">
                 <span>2020</span>
                 年

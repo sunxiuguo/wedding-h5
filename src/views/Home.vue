@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="home-container">
         <MainHeadSection />
         <FixedRouteHeader />
         <CoupleProfile />
@@ -32,13 +32,23 @@ export default {
 body {
     color: #7b7571;
 }
+
+.text-center {
+    text-align: center;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 </style>
 <style lang="less" scoped>
 .test-height {
     height: 3000px;
     width: 100vw;
 }
-.container {
+.home-container {
     color: #7b7571;
 }
 </style>

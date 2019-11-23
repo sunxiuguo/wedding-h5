@@ -102,13 +102,11 @@ export default class FixedRouteHeader extends Vue {
                 font-size: 18px;
                 line-height: 20px;
                 color: #777;
-                margin-left: 10%;
             }
 
             .navbar-collapse {
                 padding-right: 15px;
                 padding-left: 15px;
-                margin-right: 10%;
                 overflow-x: visible;
                 -webkit-overflow-scrolling: touch;
                 display: flex;
@@ -127,6 +125,7 @@ export default class FixedRouteHeader extends Vue {
                 #nav-list {
                     padding: 0px 30px;
                     list-style: none;
+                    margin: 0 !important;
 
                     li {
                         position: relative;

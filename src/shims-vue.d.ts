@@ -4,3 +4,4 @@ declare module '*.vue' {
 }
 declare module 'vue-sticky';
 declare module 'vue-parallaxy';
+declare module 'animate.css';

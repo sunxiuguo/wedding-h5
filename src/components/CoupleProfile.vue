@@ -29,6 +29,9 @@ interface ProfileInfo {
 
 @Component
 export default class CoupleProfile extends Vue {
+    targetIntersectionObserver: IntersectionObserver | null = null;
+    animateName = 'tada';
+
     profileInfoList: ProfileInfo[] = [
         {
             lastName: '孙',
@@ -45,6 +48,34 @@ export default class CoupleProfile extends Vue {
                 '哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！'
         }
     ];
+
+    observeTimeBadge(index: number) {
+        const target = document.getElementsByClassName(`profile-avatar`)[index];
+
+        if (!target) {
+            return;
+        }
+
+        this.targetIntersectionObserver = new IntersectionObserver(entries => {
+            const { isIntersecting, intersectionRatio } = entries[0];
+            const targetIsVisible = isIntersecting && intersectionRatio >= 0;
+            const delay = `delay-${index + 1}s`;
+            if (targetIsVisible) {
+                target.classList.add('animated', this.animateName, delay);
+            } else {
+                target.classList.remove('animated', this.animateName, delay);
+            }
+        });
+
+        this.targetIntersectionObserver.observe(target);
+    }
+
+    mounted() {
+        const count = document.getElementsByClassName(`profile-avatar`).length;
+        for (let i = 0; i < count; i++) {
+            this.observeTimeBadge(i);
+        }
+    }
 }
 </script>
 <style scoped lang="less">
@@ -67,6 +98,7 @@ export default class CoupleProfile extends Vue {
 
             h2 {
                 font-size: 30px;
+                margin-bottom: 40px;
                 span {
                     color: #f9667e;
                 }

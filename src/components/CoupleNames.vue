@@ -1,8 +1,8 @@
 <template>
     <ul class="names" :class="size">
-        <li>孙修国</li>
+        <li :class="nameClass">孙修国</li>
         <li class="circle" :class="size">&</li>
-        <li>祝佳儿</li>
+        <li :class="nameClass">祝佳儿</li>
     </ul>
 </template>
 
@@ -14,6 +14,46 @@ type CoupleSize = 'small' | 'medium' | 'large';
 @Component
 export default class MainHeadSection extends Vue {
     @Prop({ default: 'large' }) size!: CoupleSize;
+    @Prop({ default: false }) showAnimate!: boolean;
+
+    targetIntersectionObserver: IntersectionObserver | null = null;
+
+    get nameClass() {
+        return this.showAnimate ? 'animate-name' : '';
+    }
+
+    observeTimeBadge(index: number) {
+        const target = document.getElementsByClassName(this.nameClass)[index];
+
+        if (!target) {
+            return;
+        }
+
+        this.targetIntersectionObserver = new IntersectionObserver(entries => {
+            const { isIntersecting, intersectionRatio, boundingClientRect } = entries[0];
+            const targetIsVisible = isIntersecting && intersectionRatio >= 0;
+
+            const delay = `delay-0.5s`;
+            const animateName = index % 2 === 0 ? 'bounceInLeft' : 'bounceInRight';
+            if (targetIsVisible) {
+                target.classList.add('animated', animateName, delay);
+            } else if (boundingClientRect.bottom < 0) {
+                target.classList.remove('animated', animateName, delay);
+            }
+        });
+
+        this.targetIntersectionObserver.observe(target);
+    }
+
+    mounted() {
+        if (!this.showAnimate) {
+            return;
+        }
+        const count = document.getElementsByClassName(this.nameClass).length;
+        for (let i = 0; i < count; i++) {
+            this.observeTimeBadge(i);
+        }
+    }
 }
 </script>
 <style scoped lang="less">
