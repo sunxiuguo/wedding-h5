@@ -7,7 +7,9 @@
         <Story />
         <CountDown />
         <Gallary />
-        <div class="test-height"></div>
+        <div class="test-height">
+            to be continued....
+        </div>
     </div>
 </template>
 
@@ -51,7 +53,7 @@ body {
 </style>
 <style lang="less" scoped>
 .test-height {
-    height: 3000px;
+    height: 100px;
     width: 100vw;
 }
 .home-container {
