@@ -53,7 +53,11 @@ export default class FixedRouteHeader extends Vue {
         },
         {
             name: 'Our Sotry',
-            anchor: '#our_story'
+            anchor: '#story'
+        },
+        {
+            name: 'Count Down',
+            anchor: '#count-down'
         },
         {
             name: 'Gallery',
