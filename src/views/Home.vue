@@ -5,6 +5,7 @@
         <CoupleProfile />
         <QuotaFrase />
         <Story />
+        <CountDown />
         <div class="test-height"></div>
     </div>
 </template>
@@ -15,6 +16,7 @@ import FixedRouteHeader from '../components/FixedRouteHeader.vue';
 import CoupleProfile from '../components/CoupleProfile.vue';
 import QuotaFrase from '../components/QuotaFrase.vue';
 import Story from '../components/Story.vue';
+import CountDown from '../components/CountDown.vue';
 
 export default {
     name: 'home',
@@ -23,7 +25,8 @@ export default {
         FixedRouteHeader,
         CoupleProfile,
         QuotaFrase,
-        Story
+        Story,
+        CountDown
     }
 };
 </script>

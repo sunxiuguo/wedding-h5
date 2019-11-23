@@ -178,7 +178,7 @@ export default class Story extends Vue {
             align-items: center;
             justify-content: center;
             font-size: 28px;
-            margin-top: 20px;
+            margin-top: 50px;
 
             span {
                 color: #f9667e;
