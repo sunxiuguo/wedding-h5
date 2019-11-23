@@ -8,7 +8,9 @@
                 </h1>
                 <div class="divider"></div>
                 <p>
-                    这是我们认识的时间线，我们故事的开始。
+                    <em>
+                        这是我们认识的时间线，我们故事的开始。
+                    </em>
                 </p>
             </div>
             <ul class="timeline">

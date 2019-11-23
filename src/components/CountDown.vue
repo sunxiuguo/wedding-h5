@@ -75,7 +75,7 @@ export default class CountDown extends Vue {
     }
 
     getServerTime() {
-        const xhr = new window.XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
 
         xhr.open('GET', '/', false);
         xhr.send(null);

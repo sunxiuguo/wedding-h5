@@ -6,6 +6,7 @@
         <QuotaFrase />
         <Story />
         <CountDown />
+        <Gallary />
         <div class="test-height"></div>
     </div>
 </template>
@@ -17,6 +18,7 @@ import CoupleProfile from '../components/CoupleProfile.vue';
 import QuotaFrase from '../components/QuotaFrase.vue';
 import Story from '../components/Story.vue';
 import CountDown from '../components/CountDown.vue';
+import Gallary from '../components/Gallary.vue';
 
 export default {
     name: 'home',
@@ -26,7 +28,8 @@ export default {
         CoupleProfile,
         QuotaFrase,
         Story,
-        CountDown
+        CountDown,
+        Gallary
     }
 };
 </script>

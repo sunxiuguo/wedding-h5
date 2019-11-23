@@ -1,7 +1,7 @@
 <template>
     <section id="frase">
         <div class="container">
-            <h2>我们彼此会永远相互守候，相互支持，相互拥抱。</h2>
+            <h2>我们彼此会相互守候，相互支持，共度余生。</h2>
         </div>
     </section>
 </template>

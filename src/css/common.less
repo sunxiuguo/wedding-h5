@@ -59,3 +59,40 @@ body {
         font-size: 1.4rem;
     }
 }
+
+.close {
+    position: absolute;
+    right: 150px;
+    top: 25px;
+    width: 50px;
+    height: 50px;
+    background: #222;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px 0px black;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.close:hover {
+    background: red;
+}
+.close:before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 10px;
+    background: white;
+    transform: rotate(45deg);
+    top: 20px;
+    left: 10px;
+}
+.close:after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    background: white;
+    transform: rotate(-45deg);
+    top: 20px;
+    left: 10px;
+}
