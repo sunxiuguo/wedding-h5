@@ -95,16 +95,16 @@ export default class CountDown extends Vue {
             return;
         }
 
-        const delay = `delay-${index + 1}s`;
+        const delay = `delay-${index}s`;
 
         new IntersectionObserver(entries => {
             const { isIntersecting, intersectionRatio } = entries[0];
             const targetIsVisible = isIntersecting && intersectionRatio >= 0;
 
             if (targetIsVisible) {
-                target.classList.add('animated', 'bounceInDown', delay);
+                target.classList.add('animated', 'bounceInDown', delay, 'faster');
             } else {
-                target.classList.remove('animated', 'bounceInDown', delay);
+                target.classList.remove('animated', 'bounceInDown', delay, 'faster');
             }
         }).observe(document.querySelector('#count-down-container')!);
     }
