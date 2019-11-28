@@ -5,6 +5,10 @@ export class DateFormat {
         return num < 10 ? `0${num}` : `${num}`;
     }
 
+    public static toThreeDigit(num: number): string {
+        return num < 100 ? `0${num}` : `${num}`;
+    }
+
     public static format(time: Date | number, formation: string): string {
         return new DateFormat(time).format(formation);
     }
