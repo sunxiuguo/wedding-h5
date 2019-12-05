@@ -5,7 +5,7 @@
         <CoupleProfile />
         <QuotaFrase />
         <Story />
-        <CountDown />
+        <CardCountDown />
         <Gallary />
         <div class="test-height">
             to be continued....
@@ -19,7 +19,7 @@ import FixedRouteHeader from '../components/FixedRouteHeader.vue';
 import CoupleProfile from '../components/CoupleProfile.vue';
 import QuotaFrase from '../components/QuotaFrase.vue';
 import Story from '../components/Story.vue';
-import CountDown from '../components/CountDown.vue';
+import CardCountDown from '../components/CardCountDown.vue';
 import Gallary from '../components/Gallary.vue';
 
 export default {
@@ -30,7 +30,7 @@ export default {
         CoupleProfile,
         QuotaFrase,
         Story,
-        CountDown,
+        CardCountDown,
         Gallary
     }
 };
