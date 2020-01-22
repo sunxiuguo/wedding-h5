@@ -7,8 +7,14 @@
         <Story />
         <CardCountDown />
         <Gallary />
-        <div class="test-height">
-            to be continued....
+        <div class="bottom-info">
+            <a class="gray" href="http://beian.miit.gov.cn" target="_blank" rel="nofollow">京ICP备19046991号</a>
+            <a class="gray" href="mailto:sunxiuguo1@qq.com" target="_self">
+                联系邮箱: sunxiuguo1@qq.com
+            </a>
+            <span class="gray">
+                联系电话: 17600019061
+            </span>
         </div>
     </div>
 </template>
@@ -52,9 +58,19 @@ body {
 }
 </style>
 <style lang="less" scoped>
-.test-height {
-    height: 100px;
+.bottom-info {
+    height: 50px;
     width: 100vw;
+    padding: 0 100px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .gray {
+        color: gray;
+        font-size: 16px;
+    }
 }
 .home-container {
     color: #7b7571;
