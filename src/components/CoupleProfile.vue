@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import CommonConfig from '../const/commonConfig';
 
 interface ProfileInfo {
     lastName: string;
@@ -34,18 +35,16 @@ export default class CoupleProfile extends Vue {
 
     profileInfoList: ProfileInfo[] = [
         {
-            lastName: '孙',
-            firstName: '修国',
-            imageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-            desc:
-                '我在写bug！我是傻逼！我们会一直走下去！我在写bug！我是傻逼！我们会一直走下去！我在写bug！我是傻逼！我们会一直走下去！我在写bug！我是傻逼！我们会一直走下去！我在写bug！我是傻逼！我们会一直走下去！'
+            lastName: CommonConfig.maleLastName,
+            firstName: CommonConfig.maleFirstName,
+            imageSrc: CommonConfig.maleAvatar,
+            desc: CommonConfig.maleDesc
         },
         {
-            lastName: '祝',
-            firstName: '佳儿',
-            imageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-            desc:
-                '哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！哈哈哈哈我不喜欢傻逼！'
+            lastName: CommonConfig.femaleLastName,
+            firstName: CommonConfig.femaleFirstName,
+            imageSrc: CommonConfig.famelaeAvatar,
+            desc: CommonConfig.femaleDesc
         }
     ];
 

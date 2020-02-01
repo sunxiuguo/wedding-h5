@@ -21,6 +21,7 @@
                     @click="handleSelectGallary(gallary.id)"
                 >
                     <img :src="gallary.coverImageSrc" alt="Gallary image" class="grid-image img-responsive" />
+                    <span>{{ gallary.title }}</span>
                 </div>
             </div>
         </div>
@@ -52,6 +53,7 @@
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import 'swiper/dist/css/swiper.css';
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
+import CommonConfig from '../const/commonConfig';
 
 @Component({
     components: {
@@ -60,68 +62,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
     }
 })
 export default class Gallry extends Vue {
-    gallaryList: any[] = [
-        {
-            coverImageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-            title: '相册1',
-            id: 0,
-            content: [
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-            ]
-        },
-        {
-            coverImageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-            title: '相册2',
-            id: 1,
-            content: [
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-            ]
-        },
-        {
-            coverImageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-            title: '相册3',
-            id: 2,
-            content: [
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-            ]
-        },
-        {
-            coverImageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-            title: '相册4',
-            id: 3,
-            content: [
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-            ]
-        },
-        {
-            coverImageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-            title: '相册5',
-            id: 4,
-            content: [
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-            ]
-        },
-        {
-            coverImageSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-            title: '相册6',
-            id: 5,
-            content: [
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg',
-                'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-            ]
-        }
-    ];
+    gallaryList: any[] = CommonConfig.gallaryList;
 
     swiperOptionTop: any = {
         spaceBetween: 10,
@@ -254,6 +195,11 @@ export default class Gallry extends Vue {
 
     .gallery-popup {
         margin-bottom: 30px;
+
+        span {
+            font-size: 20px;
+            margin: 10px 0;
+        }
     }
 
     .gallery_product {

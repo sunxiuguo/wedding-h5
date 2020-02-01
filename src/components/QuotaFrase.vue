@@ -1,16 +1,19 @@
 <template>
     <section id="frase">
         <div class="container">
-            <h2>我们彼此会相互守候，相互支持，共度余生。</h2>
+            <h2>{{ frase }}</h2>
         </div>
     </section>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import CommonConfig from '../const/commonConfig';
 
 @Component
-export default class QuotaFrase extends Vue {}
+export default class QuotaFrase extends Vue {
+    frase = CommonConfig.frase;
+}
 </script>
 <style scoped lang="less">
 #frase {

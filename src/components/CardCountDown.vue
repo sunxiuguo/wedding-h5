@@ -126,27 +126,28 @@ export default class CardCountDown extends Vue {
             return;
         }
 
-        let delay: string = '';
+        let delay: string = 'delay-1s';
 
-        switch (index) {
-            case 0:
-            case 1:
-            case 2:
-                delay = 'delay-0s';
-                break;
-            case 3:
-            case 4:
-                delay = 'delay-1s';
-                break;
-            case 5:
-            case 6:
-                delay = 'delay-2s';
-                break;
-            case 7:
-            case 8:
-                delay = 'delay-3s';
-                break;
-        }
+        // 统一delay1s 否则出现太慢了
+        // switch (index) {
+        //     case 0:
+        //     case 1:
+        //     case 2:
+        //         delay = 'delay-0s';
+        //         break;
+        //     case 3:
+        //     case 4:
+        //         delay = 'delay-1s';
+        //         break;
+        //     case 5:
+        //     case 6:
+        //         delay = 'delay-2s';
+        //         break;
+        //     case 7:
+        //     case 8:
+        //         delay = 'delay-3s';
+        //         break;
+        // }
 
         new IntersectionObserver(entries => {
             const { isIntersecting, intersectionRatio } = entries[0];

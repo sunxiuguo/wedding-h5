@@ -25,7 +25,7 @@
                                 <span>
                                     {{ story.month }}
                                 </span>
-                                {{ story.day }}
+                                {{ story.day || '' }}
                             </h2>
                         </div>
                         <div class="timeline-body text-center">
@@ -34,7 +34,7 @@
                                 {{ story.title }}
                             </h2>
                             <p>
-                                {{ story.desc }}
+                                {{ story.desc || '' }}
                             </p>
                         </div>
                     </div>
@@ -59,6 +59,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import CommonConfig from '../const/commonConfig';
 
 enum AnimateName {
     LEFT_IN = 'bounceInLeft',
@@ -70,40 +71,7 @@ enum AnimateName {
 @Component
 export default class Story extends Vue {
     targetIntersectionObserver: IntersectionObserver[] = [];
-    storyList: any[] = [
-        {
-            year: '2018年',
-            month: '4月',
-            day: '25日',
-            title: '我们的第一次相遇',
-            desc: 'xxxxxxxxxxxxxxxxxxx',
-            imgSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-        },
-        {
-            year: '2018年',
-            month: '4月',
-            day: '25日',
-            title: '我们的第一次相遇1',
-            desc: 'xxxxxxxxxxxxxxxxxxx',
-            imgSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-        },
-        {
-            year: '2018年',
-            month: '4月',
-            day: '25日',
-            title: '我们的第一次相遇2',
-            desc: 'xxxxxxxxxxxxxxxxxxx',
-            imgSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-        },
-        {
-            year: '2018年',
-            month: '4月',
-            day: '25日',
-            title: '我们的第一次相遇3',
-            desc: 'xxxxxxxxxxxxxxxxxxx',
-            imgSrc: 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
-        }
-    ];
+    storyList: any[] = CommonConfig.storyList;
 
     observeTimeBadge(index: number) {
         const target = document.getElementsByClassName(`timeline-badge`)[index];
@@ -380,6 +348,11 @@ export default class Story extends Vue {
         .timeline-body > p,
         .timeline-body > ul {
             margin-bottom: 0;
+        }
+        .timeline-body > p {
+            font-size: 20px;
+            line-height: 30px;
+            white-space: pre-wrap;
         }
         .timeline-body img {
             margin: 30px auto;

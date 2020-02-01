@@ -11,19 +11,19 @@
             </h3>
             <CoupleNames :showAnimate="true" />
             <div class="date">
-                <span>2020</span>
+                <span>{{ year }}</span>
                 年
-                <span>12</span>
+                <span>{{ month }}</span>
                 月
-                <span>03</span>
+                <span>{{ day }}</span>
                 日
             </div>
             <div class="hour">
-                上午 10:00
+                {{ time }}
             </div>
             <div class="place">
-                <h3>山东省青岛市即墨区</h3>
-                <p>xxxx路xxxxx街xxxxxx号</p>
+                <h3>{{ location }}</h3>
+                <p>{{ locationDesc }}</p>
             </div>
         </section>
     </section>
@@ -32,6 +32,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Parallax from 'vue-parallaxy';
+import CommonConfig from '../const/commonConfig';
 
 import CoupleNames from './CoupleNames.vue';
 
@@ -41,7 +42,14 @@ import CoupleNames from './CoupleNames.vue';
         Parallax
     }
 })
-export default class MainHeadSection extends Vue {}
+export default class MainHeadSection extends Vue {
+    year = CommonConfig.year;
+    month = CommonConfig.month;
+    day = CommonConfig.day;
+    time = CommonConfig.time;
+    location = CommonConfig.location;
+    locationDesc = CommonConfig.locationDesc;
+}
 </script>
 <style scoped lang="less">
 #home {
@@ -55,10 +63,14 @@ export default class MainHeadSection extends Vue {}
         right: 0;
     }
 
+    .title {
+        margin-bottom: 20px;
+    }
+
     .title span {
         border-image: none;
         display: inline-block;
-        margin: 5px 10px;
+        margin: 10px 15px;
         width: 40px;
         border-color: #d6516d;
         border-style: solid none none;

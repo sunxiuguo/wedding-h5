@@ -8,7 +8,7 @@
         <CardCountDown />
         <Gallary />
         <div class="bottom-info">
-            <a class="gray" href="http://beian.miit.gov.cn" target="_blank" rel="nofollow">京ICP备19046991号</a>
+            <a class="gray" href="http://beian.miit.gov.cn" target="_blank" rel="nofollow">京ICP备19046991号-1</a>
             <a class="gray" href="mailto:sunxiuguo1@qq.com" target="_self">
                 联系邮箱: sunxiuguo1@qq.com
             </a>

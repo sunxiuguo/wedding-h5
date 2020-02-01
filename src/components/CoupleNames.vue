@@ -1,13 +1,14 @@
 <template>
     <ul class="names" :class="size">
-        <li :class="nameClass">孙修国</li>
+        <li :class="nameClass">{{ maleName }}</li>
         <li class="circle" :class="size">&</li>
-        <li :class="nameClass">祝佳儿</li>
+        <li :class="nameClass">{{ femaleName }}</li>
     </ul>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import CommonConfig from '../const/commonConfig';
 
 type CoupleSize = 'small' | 'medium' | 'large';
 
@@ -15,6 +16,9 @@ type CoupleSize = 'small' | 'medium' | 'large';
 export default class MainHeadSection extends Vue {
     @Prop({ default: 'large' }) size!: CoupleSize;
     @Prop({ default: false }) showAnimate!: boolean;
+
+    maleName = CommonConfig.maleLastName + CommonConfig.maleFirstName;
+    femaleName = CommonConfig.femaleLastName + CommonConfig.femaleFirstName;
 
     targetIntersectionObserver: IntersectionObserver | null = null;
 
