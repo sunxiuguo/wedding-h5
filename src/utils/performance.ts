@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { VueRouter } from 'vue-router/types/router';
 
 export class Performance {

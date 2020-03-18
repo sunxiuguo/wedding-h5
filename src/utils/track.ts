@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import queryString from 'query-string';
 import { v4 as uuid } from 'uuid';
 
