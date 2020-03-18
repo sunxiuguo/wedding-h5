@@ -27,6 +27,8 @@ import QuotaFrase from '../components/QuotaFrase.vue';
 import Story from '../components/Story.vue';
 import CardCountDown from '../components/CardCountDown.vue';
 import Gallary from '../components/Gallary.vue';
+import { BaseTrack } from '../utils/track';
+import { Performance } from '../utils/performance';
 
 export default {
     name: 'home',
@@ -38,6 +40,11 @@ export default {
         Story,
         CardCountDown,
         Gallary
+    },
+    created: () => {
+        window.addEventListener('load', () => {
+            BaseTrack.track(Performance.getTimings());
+        });
     }
 };
 </script>

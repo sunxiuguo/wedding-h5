@@ -7,11 +7,12 @@ export class BaseTrack {
     private static serverUrl: string =
         'https://zhusun.cn-beijing.log.aliyuncs.com/logstores/zhusun-online/track_ua.gif?APIVersion=0.6.0&';
 
-    public static track() {
+    public static track(params: { [key: string]: any }) {
         try {
             const qs = queryString.stringify({
                 timestamp: Date.now(),
-                traceId: this.getTraceId()
+                traceId: this.getTraceId(),
+                ...params
             });
             this.reportByImg(qs);
         } catch (e) {
