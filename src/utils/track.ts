@@ -13,6 +13,7 @@ export class BaseTrack {
             const qs = queryString.stringify({
                 timestamp: Date.now(),
                 traceId: this.getTraceId(),
+                url: location.href,
                 ...params
             });
             this.reportByImg(qs);
