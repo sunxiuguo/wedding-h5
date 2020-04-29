@@ -10,6 +10,11 @@ export class BaseTrack {
 
     public static track(params: { [key: string]: any }) {
         try {
+            console.log(process.env);
+            if (process.env.NODE_ENV !== 'production') {
+                // 非生产环境不上报
+                return;
+            }
             const qs = queryString.stringify({
                 timestamp: Date.now(),
                 traceId: this.getTraceId(),
