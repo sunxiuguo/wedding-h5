@@ -14,7 +14,12 @@
                 </p>
             </div>
             <ul class="timeline">
-                <li v-for="(story, index) in storyList" :key="index" :class="{ 'timeline-inverted': index % 2 !== 0 }">
+                <li
+                    v-for="(story, index) in storyList"
+                    :key="index"
+                    :class="{ 'timeline-inverted': index % 2 !== 0 }"
+                    @click="toDetail(index)"
+                >
                     <div class="timeline-badge" :id="`timeLineBadge${index}`">
                         <i class="fa fa-heart animated heartBeat"></i>
                     </div>
@@ -72,6 +77,13 @@ enum AnimateName {
 export default class Story extends Vue {
     targetIntersectionObserver: IntersectionObserver[] = [];
     storyList: any[] = CommonConfig.storyList;
+
+    toDetail(index: string) {
+        this.$router.push({
+            path: '/story',
+            query: { id: index }
+        });
+    }
 
     observeTimeBadge(index: number) {
         const target = document.getElementsByClassName(`timeline-badge`)[index];
