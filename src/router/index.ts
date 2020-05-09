@@ -27,6 +27,11 @@ const routes: RouteConfig[] = [
         path: '/story',
         name: 'story',
         component: () => import(/* webpackChunkName: "story" */ '../views/StoryPage.vue')
+    },
+    {
+        path: '/grid',
+        name: 'grid',
+        component: () => import(/* webpackChunkName: "story" */ '../views/LightGrid.vue')
     }
 ];
 
