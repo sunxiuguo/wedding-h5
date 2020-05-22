@@ -10,6 +10,11 @@
 
 用到了animation.js做一些动效。
 
+## TODO 
+
+- [ ] 使用婚纱照底片补充底部相册
+- [ ] 每个Story添加详情，模拟QQ对话效果
+
 
 ## Project setup
 ```
