@@ -198,5 +198,22 @@ export default {
                 'https://cdn.zhusun.club/image/wedding/bg1.pngbg-1.jpg'
             ]
         }
-    ]
+    ],
+    maskQuestions: [
+        {
+            question: '我们是哪一天在一起的',
+            answer: '20170615'
+        },
+        {
+            question: '我们什么时候领了结婚证',
+            answer: '20201120'
+        },
+        {
+            question: '我们的婚礼是什么日子',
+            answer: '20201122'
+        }
+    ] as Array<{
+        question: string;
+        answer: string;
+    }>
 };

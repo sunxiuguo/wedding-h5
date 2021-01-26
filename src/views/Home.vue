@@ -1,5 +1,6 @@
 <template>
     <div class="home-container">
+        <NumberSelectMask v-if="showQuestionMask" />
         <MainHeadSection />
         <FixedRouteHeader />
         <CoupleProfile />
@@ -20,6 +21,8 @@
 </template>
 
 <script>
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
+
 import MainHeadSection from '../components/MainHeadSection.vue';
 import FixedRouteHeader from '../components/FixedRouteHeader.vue';
 import CoupleProfile from '../components/CoupleProfile.vue';
@@ -27,11 +30,12 @@ import QuotaFrase from '../components/QuotaFrase.vue';
 import Story from '../components/Story.vue';
 import CardCountDown from '../components/CardCountDown.vue';
 import Gallary from '../components/Gallary.vue';
+import NumberSelectMask from '../components/NumberSelectMask.vue';
 import { BaseTrack } from '../utils/track';
 import { Performance } from '../utils/performance';
+import { vScroll } from '../utils/scroll';
 
-export default {
-    name: 'home',
+@Component({
     components: {
         MainHeadSection,
         FixedRouteHeader,
@@ -39,14 +43,28 @@ export default {
         QuotaFrase,
         Story,
         CardCountDown,
-        Gallary
-    },
-    created: () => {
+        Gallary,
+        NumberSelectMask
+    }
+})
+export default class Home extends Vue {
+    showQuestionMask = true;
+
+    @Watch('showQuestionMask', { immediate: true })
+    onQuestionMaskStatusChange() {
+        if (this.showQuestionMask) {
+            vScroll.inserted();
+        } else {
+            vScroll.unbind();
+        }
+    }
+
+    created() {
         window.addEventListener('load', () => {
             BaseTrack.track(Performance.getTimings());
         });
     }
-};
+}
 </script>
 <style lang="less">
 @import '../css/common.less';
