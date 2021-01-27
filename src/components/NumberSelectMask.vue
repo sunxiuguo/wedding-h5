@@ -7,7 +7,14 @@
             </ul>
             <!-- 第二层：数字 -->
             <ul class="grid-list grid-num">
-                <li class="grid-item" tabindex="0" v-for="(item, index) in digitalMatrix" :key="item + index">
+                <li
+                    v-for="(item, index) in digitalMatrix"
+                    :key="item + index"
+                    class="grid-item"
+                    :class="{ active: selectedDigitalIdx.includes(index) }"
+                    tabindex="0"
+                    @click="onSelect(index)"
+                >
                     {{ item }}
                 </li>
             </ul>
@@ -49,8 +56,8 @@ export default class NumberSelectMask extends Vue {
         e.stopPropagation();
         const rect = this.$refs.gridBorderContainer.getBoundingClientRect() || null;
 
-        this.maskX = e.pageX - (rect ? rect.x : this.DEFALUT_MASK_X) - 150;
-        this.maskY = e.pageY - (rect ? rect.y : this.DEFALUT_MASK_Y) - 150;
+        this.maskX = e.pageX - (rect ? rect.x : this.DEFALUT_MASK_X) - (150 / 1500) * document.body.clientWidth;
+        this.maskY = e.pageY - (rect ? rect.y : this.DEFALUT_MASK_Y) - (150 / 1500) * document.body.clientWidth;
     }
 
     handleMouseLeave() {
@@ -140,10 +147,9 @@ body {
 
         &:hover {
             color: #fff;
-            // border-color: #2bf;
         }
 
-        &:focus {
+        &.active {
             color: #666;
             background-color: #fe2;
         }

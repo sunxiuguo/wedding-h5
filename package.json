@@ -11,6 +11,7 @@
     "dependencies": {
         "animate.css": "^3.7.2",
         "core-js": "^3.3.2",
+        "ityped": "^1.0.3",
         "prerender-spa-plugin": "^3.4.0",
         "query-string": "^6.11.1",
         "register-service-worker": "^1.6.2",
