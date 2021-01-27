@@ -1,5 +1,6 @@
 <template>
     <div class="number-select-mask" @touchmove.prevent>
+        <CyberpunkTextContainer :text="'哈哈哈哈哈哈'" />
         <div class="grid" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave">
             <!-- 第一层：网格 -->
             <ul class="grid-list grid-border" ref="gridBorderContainer" :style="maskStyle">
@@ -25,8 +26,11 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import CommonConfig from '../const/commonConfig';
+import CyberpunkTextContainer from './CyberpunkTextContainer.vue';
 
-@Component
+@Component({
+    components: { CyberpunkTextContainer }
+})
 export default class NumberSelectMask extends Vue {
     readonly DEFALUT_MASK_X = -500;
     readonly DEFALUT_MASK_Y = -500;
