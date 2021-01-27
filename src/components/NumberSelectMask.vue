@@ -44,7 +44,7 @@ export default class NumberSelectMask extends Vue {
 
     initDigitalMatrix() {
         // 初始化一个10*10的, 填充0-9随机整数的二维数组
-        this.digitalMatrix = Array.from({ length: 100 }, () => String(Math.floor(Math.random() * 10)));
+        this.digitalMatrix = Array.from({ length: 120 }, () => String(Math.floor(Math.random() * 10)));
     }
 }
 </script>
@@ -66,7 +66,7 @@ body {
     z-index: 1000;
 }
 .grid {
-    margin: 100px 50px;
+    margin: (10/375) * 100vw (5/375) * 100vw;
     position: relative;
 }
 
@@ -80,13 +80,13 @@ body {
 }
 
 .grid-item {
-    width: 80px;
-    height: 80px;
-    border: 1px solid transparent;
-    margin-top: 4px;
-    margin-left: 4px;
+    width: (20/375) * 100vw;
+    height: (20/375) * 100vw;
+    border: (1/375) * 100vw solid transparent;
+    margin-top: (3/375) * 100vw;
+    margin-left: (3/375) * 100vw;
     display: flex;
-    font-size: 40px;
+    font-size: (10/375) * 100vw;
     justify-content: center;
     align-items: center;
     outline: none;
