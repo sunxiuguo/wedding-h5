@@ -1,6 +1,5 @@
 <template>
     <div class="home-container">
-        <NumberSelectMask v-if="showQuestionMask" />
         <MainHeadSection />
         <FixedRouteHeader />
         <CoupleProfile />
@@ -30,7 +29,6 @@ import QuotaFrase from '../components/QuotaFrase.vue';
 import Story from '../components/Story.vue';
 import CardCountDown from '../components/CardCountDown.vue';
 import Gallary from '../components/Gallary.vue';
-import NumberSelectMask from '../components/NumberSelectMask.vue';
 import { BaseTrack } from '../utils/track';
 import { Performance } from '../utils/performance';
 import { vScroll } from '../utils/scroll';
@@ -43,13 +41,10 @@ import { vScroll } from '../utils/scroll';
         QuotaFrase,
         Story,
         CardCountDown,
-        Gallary,
-        NumberSelectMask
+        Gallary
     }
 })
 export default class Home extends Vue {
-    showQuestionMask = true;
-
     @Watch('showQuestionMask', { immediate: true })
     onQuestionMaskStatusChange() {
         if (this.showQuestionMask) {

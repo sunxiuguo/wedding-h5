@@ -1,14 +1,19 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
+import Cyberpunk from '../views/CyberPunk.vue';
 
 Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
     {
         path: '/',
+        name: 'cyber',
+        component: Cyberpunk
+    },
+    {
+        path: '/home',
         name: 'home',
-        component: Home
+        component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue')
     },
     {
         path: '/about',

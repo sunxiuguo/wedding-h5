@@ -26,7 +26,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import CommonConfig from '../const/commonConfig';
-import CyberpunkTextContainer from './CyberpunkTextContainer.vue';
+import CyberpunkTextContainer from '../components/CyberpunkTextContainer.vue';
 
 @Component({
     components: { CyberpunkTextContainer }
