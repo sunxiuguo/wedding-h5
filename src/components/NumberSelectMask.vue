@@ -1,7 +1,7 @@
 <template>
-    <div class="number-select-mask" @touchmove.prevent>
-        <CyberpunkTextContainer :text="'哈哈哈哈哈哈'" />
-        <div class="grid" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave">
+    <div class="number-select-mask" @touchmove.prevent @click="onClickRoot">
+        <CyberpunkTextContainer :text="cyberText" v-if="cyberText" />
+        <div class="grid" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave" v-else>
             <!-- 第一层：网格 -->
             <ul class="grid-list grid-border" ref="gridBorderContainer" :style="maskStyle">
                 <li class="grid-item" v-for="(item, index) in digitalMatrix" :key="item + index"></li>
@@ -32,6 +32,7 @@ import CyberpunkTextContainer from './CyberpunkTextContainer.vue';
     components: { CyberpunkTextContainer }
 })
 export default class NumberSelectMask extends Vue {
+    readonly CYBERPUNK_TEXT_LIST = ['回答我的问题', '准备好了么'];
     readonly DEFALUT_MASK_X = -500;
     readonly DEFALUT_MASK_Y = -500;
     digitalMatrix: string[] = [];
@@ -39,6 +40,8 @@ export default class NumberSelectMask extends Vue {
     questions = CommonConfig.maskQuestions;
     maskX: number = this.DEFALUT_MASK_X;
     maskY: number = this.DEFALUT_MASK_Y;
+    cyberText = this.CYBERPUNK_TEXT_LIST[0];
+    timer = 0;
 
     $refs!: {
         gridBorderContainer: HTMLUListElement;
@@ -53,6 +56,28 @@ export default class NumberSelectMask extends Vue {
 
     created() {
         this.initDigitalMatrix();
+    }
+
+    onClickRoot() {
+        switch (this.cyberText) {
+            case this.CYBERPUNK_TEXT_LIST[0]: {
+                this.cyberText = this.CYBERPUNK_TEXT_LIST[1];
+                break;
+            }
+            case this.CYBERPUNK_TEXT_LIST[1]: {
+                let count = 3;
+                this.timer = setInterval(() => {
+                    if (count === 0) {
+                        clearInterval(this.timer);
+                        this.cyberText = '';
+                        return;
+                    }
+                    this.cyberText = String(count);
+                    count--;
+                }, 1000);
+                break;
+            }
+        }
     }
 
     // 将遮罩移动到鼠标位置

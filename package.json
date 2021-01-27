@@ -25,6 +25,7 @@
         "vuex": "^3.0.1"
     },
     "devDependencies": {
+        "@types/ityped": "^1.0.0",
         "@types/uuid": "^7.0.2",
         "@vue/cli-plugin-babel": "^4.0.0",
         "@vue/cli-plugin-eslint": "^4.0.0",

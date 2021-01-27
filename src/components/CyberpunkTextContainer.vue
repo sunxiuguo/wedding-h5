@@ -20,7 +20,7 @@ export default class CyberpunkTextContainer extends Vue {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(2.4);
-    width: (300 / @base) * 100vw;
+    // width: (300 / @base) * 100vw;
     font-size: (36 / @base) * 100vw;
     font-family: Raleway, Verdana, Arial;
     color: #fff;
