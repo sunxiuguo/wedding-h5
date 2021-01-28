@@ -1,7 +1,12 @@
 <template>
     <div class="number-select-mask" @touchmove.prevent @click="onClickRoot">
-        <CyberpunkTextContainer :text="cyberText" v-if="cyberText" />
-        <div class="grid" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave" v-else>
+        <div v-if="!showQuestion">
+            <div v-for="(text, index) in CYBERPUNK_TEXT_LIST" :key="text + index">
+                <CyberpunkTextContainer :text="text" v-if="index === currentDisplayTextIdx" />
+            </div>
+        </div>
+
+        <div class="grid" @mousemove="handleMouseMove" @mouseleave="handleMouseLeave" v-show="showQuestion">
             <!-- 第一层：网格 -->
             <ul class="grid-list grid-border" ref="gridBorderContainer" :style="maskStyle">
                 <li class="grid-item" v-for="(item, index) in digitalMatrix" :key="item + index"></li>
@@ -32,7 +37,7 @@ import CyberpunkTextContainer from '../components/CyberpunkTextContainer.vue';
     components: { CyberpunkTextContainer }
 })
 export default class NumberSelectMask extends Vue {
-    readonly CYBERPUNK_TEXT_LIST = ['回答我的问题', '准备好了么'];
+    readonly CYBERPUNK_TEXT_LIST = ['回答我的问题', '准备好了么', '3', '2', '1'];
     readonly DEFALUT_MASK_X = -500;
     readonly DEFALUT_MASK_Y = -500;
     digitalMatrix: string[] = [];
@@ -40,8 +45,9 @@ export default class NumberSelectMask extends Vue {
     questions = CommonConfig.maskQuestions;
     maskX: number = this.DEFALUT_MASK_X;
     maskY: number = this.DEFALUT_MASK_Y;
-    cyberText = this.CYBERPUNK_TEXT_LIST[0];
     timer = 0;
+    currentDisplayTextIdx: number = 0;
+    showQuestion = false;
 
     $refs!: {
         gridBorderContainer: HTMLUListElement;
@@ -59,23 +65,24 @@ export default class NumberSelectMask extends Vue {
     }
 
     onClickRoot() {
-        switch (this.cyberText) {
-            case this.CYBERPUNK_TEXT_LIST[0]: {
-                this.cyberText = this.CYBERPUNK_TEXT_LIST[1];
+        switch (this.currentDisplayTextIdx) {
+            case 0: {
+                this.currentDisplayTextIdx = 1;
                 break;
             }
-            case this.CYBERPUNK_TEXT_LIST[1]: {
-                let count = 3;
+            case 1: {
                 this.timer = setInterval(() => {
-                    if (count === 0) {
+                    if (this.currentDisplayTextIdx === this.CYBERPUNK_TEXT_LIST.length - 1) {
                         clearInterval(this.timer);
-                        this.cyberText = '';
+                        this.showQuestion = true;
                         return;
                     }
-                    this.cyberText = String(count);
-                    count--;
-                }, 1000);
+                    this.currentDisplayTextIdx += 1;
+                }, 1300);
                 break;
+            }
+            default: {
+                return;
             }
         }
     }
@@ -138,6 +145,8 @@ body {
 .grid-list {
     top: 0;
     left: 0;
+    right: 0;
+    margin: 0 auto;
     color: #666;
     display: flex;
     flex-wrap: wrap;
@@ -182,6 +191,26 @@ body {
             color: #666;
             background-color: #fe2;
         }
+    }
+}
+.fade-enter-active {
+    animation: fade-in 0.5s;
+}
+.fade-leave-active {
+    animation: fade-in 0.5s reverse;
+}
+@keyframes fade-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }
 </style>
